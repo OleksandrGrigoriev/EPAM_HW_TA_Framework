@@ -18,7 +18,6 @@ public class CheckFinalPriceTest extends CommonTestConditions {
     @Test
     public void checkFinalPriceTest() throws IOException {
         User testUser = UserCreator.withCredentialsFromProperty();
-        //User testUser = new User("standard_user", "secret_sauce");
         double finalPrice = new LoginPage(driver)
                                 .openPage()
                                 .login(testUser)

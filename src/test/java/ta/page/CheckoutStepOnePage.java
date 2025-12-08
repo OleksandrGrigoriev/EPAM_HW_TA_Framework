@@ -1,5 +1,7 @@
 package ta.page;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +12,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class CheckoutStepOnePage extends AbstractPage {
-
+    private final Logger logger = LogManager.getRootLogger();
     private static final String PAGE_URL = "https://www.saucedemo.com/checkout-step-one.html";
 
     @FindBy(name = "firstName")
@@ -32,6 +34,7 @@ public class CheckoutStepOnePage extends AbstractPage {
 
     protected CheckoutStepOnePage openPage() {
         driver.navigate().to(PAGE_URL);
+        logger.info("Checkout information page opened");
         return this;
     }
 
@@ -43,6 +46,7 @@ public class CheckoutStepOnePage extends AbstractPage {
         lastNameForm.sendKeys(prop.getProperty("lastname"));
         postCodeForm.sendKeys(prop.getProperty("postcode"));
         fis.close();
+        logger.info("Info checkout performed");
         continueButton.click();
         return new CheckoutStepTwoPage(driver);
     }
