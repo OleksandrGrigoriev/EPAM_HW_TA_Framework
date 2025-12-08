@@ -30,9 +30,6 @@ public class  DriverSingleton {
             driver.manage().window().maximize();
         }
         return driver;
-//        driver = new ChromeDriver(suppressWarning());
-//        driver.manage().window().maximize();
-//        return driver;
     }
 
     public static void closeDriver(){
