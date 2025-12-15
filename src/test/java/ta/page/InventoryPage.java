@@ -6,12 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import ta.util.LogDecorator;
 
 import java.util.List;
 
 public class InventoryPage extends AbstractPage {
 
     private final Logger logger = LogManager.getRootLogger();
+    private LogDecorator logDecorator = new LogDecorator(logger);
     private static final String PAGE_URL = "https://www.saucedemo.com/inventory.html";
 
     @FindBy(css = ".btn_inventory")
@@ -32,7 +34,7 @@ public class InventoryPage extends AbstractPage {
 
     protected InventoryPage openPage() {
         driver.navigate().to(PAGE_URL);
-        logger.info("Inventory page opened");
+        logDecorator.decorate("Inventory page opened");
         return this;
     }
 
@@ -41,12 +43,12 @@ public class InventoryPage extends AbstractPage {
             itemsOnPage.get(i).click();
             orderPrice += Double.parseDouble(itemsPrices.get(i).getText().substring(1));
         }
-        logger.info(itemsInCart + " " + "items were added to cart");
+        logDecorator.decorate(itemsInCart + " " + "items were added to cart");
         return this;
     }
 
     public ShoppingCartPage goToShoppingCart() {
         cartButton.click();
-        return new ShoppingCartPage(driver);
+        return new ShoppingCartPage(driver).openPage();
     }
 }
