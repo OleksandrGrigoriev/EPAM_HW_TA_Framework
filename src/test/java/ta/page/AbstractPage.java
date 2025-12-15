@@ -1,6 +1,7 @@
 package ta.page;
 
 import org.openqa.selenium.WebDriver;
+import ta.model.User;
 
 public abstract class AbstractPage {
 	protected WebDriver driver;
@@ -10,5 +11,5 @@ public abstract class AbstractPage {
         this.driver = driver;
     }
 
-	protected abstract AbstractPage openPage();
+	public abstract AbstractPage openPage();
 }

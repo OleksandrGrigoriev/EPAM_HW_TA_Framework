@@ -32,7 +32,7 @@ public class InventoryPage extends AbstractPage {
         PageFactory.initElements(this.driver, this);
     }
 
-    protected InventoryPage openPage() {
+    public InventoryPage openPage() {
         driver.navigate().to(PAGE_URL);
         logDecorator.decorate("Inventory page opened");
         return this;

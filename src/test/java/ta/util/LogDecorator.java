@@ -10,7 +10,7 @@ public class LogDecorator {
     }
 
     public void decorate(String message) {
-        logger.info("------" +  message + "------");
+        logger.info("------{}------", message);
     }
 }
 

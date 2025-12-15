@@ -2,8 +2,7 @@ package ta.test;
 
 import org.testng.annotations.Test;
 import ta.model.User;
-import ta.page.InventoryPage;
-import ta.page.LoginPage;
+import ta.page.*;
 import ta.service.UserCreator;
 
 import java.io.IOException;
@@ -18,7 +17,11 @@ public class CheckFinalPriceTest extends CommonTestConditions {
     @Test
     public void checkFinalPriceTest() throws IOException {
         User testUser = UserCreator.withCredentialsFromProperty();
-        double finalPrice = new LoginPage(driver)
+
+        PageMaker pageMaker = Factory.getPageMakerByName("login", driver);
+        LoginPage loginPage = (LoginPage)pageMaker.createPage();
+
+        double finalPrice = loginPage
                                 .openPage()
                                 .login(testUser)
                                 .addItemsToCart(ITEMS_IN_CART)

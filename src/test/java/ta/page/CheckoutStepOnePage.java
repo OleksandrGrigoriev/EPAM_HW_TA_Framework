@@ -34,7 +34,7 @@ public class CheckoutStepOnePage extends AbstractPage {
         PageFactory.initElements(this.driver, this);
     }
 
-    protected CheckoutStepOnePage openPage() {
+    public CheckoutStepOnePage openPage() {
         driver.navigate().to(PAGE_URL);
         logDecorator.decorate("Information checkout page opened");
         return this;

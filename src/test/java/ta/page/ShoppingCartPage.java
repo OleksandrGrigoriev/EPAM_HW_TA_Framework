@@ -22,7 +22,7 @@ public class ShoppingCartPage extends AbstractPage {
         PageFactory.initElements(this.driver, this);
     }
 
-    protected ShoppingCartPage openPage() {
+    public ShoppingCartPage openPage() {
         driver.navigate().to(PAGE_URL);
         logDecorator.decorate("Shopping cart page opened");
         return this;
