@@ -12,7 +12,7 @@ public class ShoppingCartPage extends AbstractPage {
 
     private static final String PAGE_URL = "https://www.saucedemo.com/cart.html";
     private final Logger logger = LogManager.getRootLogger();
-    private LogDecorator logDecorator = new LogDecorator(logger);
+    private final LogDecorator logDecorator = new LogDecorator(logger);
 
     @FindBy(css = "#checkout")
     private WebElement checkoutButton;

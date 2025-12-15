@@ -13,7 +13,7 @@ import java.util.List;
 public class InventoryPage extends AbstractPage {
 
     private final Logger logger = LogManager.getRootLogger();
-    private LogDecorator logDecorator = new LogDecorator(logger);
+    private final LogDecorator logDecorator = new LogDecorator(logger);
     private static final String PAGE_URL = "https://www.saucedemo.com/inventory.html";
 
     @FindBy(css = ".btn_inventory")

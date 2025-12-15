@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import ta.util.LogDecorator;
 
-
 public class CheckoutStepTwoPage extends AbstractPage {
     private final Logger logger = LogManager.getRootLogger();
     private LogDecorator logDecorator = new LogDecorator(logger);

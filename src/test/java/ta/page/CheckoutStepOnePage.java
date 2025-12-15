@@ -43,11 +43,13 @@ public class CheckoutStepOnePage extends AbstractPage {
     public CheckoutStepTwoPage goToCheckoutStepTwo() throws IOException {
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream("src/test/resources/checkout.properties");
+
         prop.load(fis);
         nameForm.sendKeys(prop.getProperty("name"));
         lastNameForm.sendKeys(prop.getProperty("lastname"));
         postCodeForm.sendKeys(prop.getProperty("postcode"));
         fis.close();
+
         logDecorator.decorate("Information checkout performed");
         continueButton.click();
         return new CheckoutStepTwoPage(driver).openPage();
