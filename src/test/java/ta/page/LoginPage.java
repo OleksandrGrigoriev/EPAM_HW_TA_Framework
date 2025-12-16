@@ -7,12 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import ta.model.User;
+import ta.util.Decorator;
 import ta.util.LogDecorator;
 
 public class LoginPage extends AbstractPage {
 
     private final Logger logger = LogManager.getRootLogger();
-    private LogDecorator logDecorator = new LogDecorator(logger);
+    private Decorator logDecorator = new LogDecorator(logger);
     private static final String PAGE_URL = "https://www.saucedemo.com/";
 
     @FindBy(css = "#user-name")

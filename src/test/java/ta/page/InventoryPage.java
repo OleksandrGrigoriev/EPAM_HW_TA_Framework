@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import ta.util.Decorator;
 import ta.util.LogDecorator;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 public class InventoryPage extends AbstractPage {
 
     private final Logger logger = LogManager.getRootLogger();
-    private final LogDecorator logDecorator = new LogDecorator(logger);
+    private final Decorator logDecorator = new LogDecorator(logger);
     private static final String PAGE_URL = "https://www.saucedemo.com/inventory.html";
 
     @FindBy(css = ".btn_inventory")
